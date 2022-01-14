@@ -1,0 +1,42 @@
+nav {
+  
+  ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 350px;
+    margin: 20px auto 0;
+  }
+
+  a {
+    text-decoration: none;
+    li {
+      color: $color-1;
+      font-size: 1.1rem;
+      &:hover {
+        color: $color-3;
+      }
+    }
+    &.nav-active {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        background: $color-1;
+        width: 100%;
+        height: 2px;
+        bottom: -5px;
+        animation: animAfter 0.5s forwards;
+        transform-origin: center;
+        transform: scaleX(0);
+
+        @keyframes animAfter {
+          to {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+}

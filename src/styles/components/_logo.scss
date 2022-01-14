@@ -1,0 +1,21 @@
+#logo {
+  width: 250px;
+  height: 50px;
+  background: url("../../assets/img/pic.jpg") center/cover;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 5px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.280);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  img {
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+  }
+  h2 {
+    color: $color-1;
+    font-size: 2rem;
+  }
+}

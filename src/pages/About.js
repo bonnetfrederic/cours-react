@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
 
 const About = () => {
+
+  const [text, setText] = useState("Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus repellat debitis amet ullam. Dignissimos repellendus consequatur temporibus, obcaecati minus architecto nostrum, quo ipsam corporis, harum qui? Odit, cum. Modi, vero?");
+
+  const [editText, setEditText] = useState(false);
+
   return (
     <div className="about-container">
       <Logo />
@@ -10,8 +15,19 @@ const About = () => {
 
       <h1>About</h1>
 
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias officiis perspiciatis consequuntur laboriosam molestiae soluta, modi ratione voluptatibus earum! Non atque, tempora minima quas ducimus eligendi consectetur ipsum maiores voluptates vero dolor aut voluptate numquam minus, quasi dolorum recusandae optio, repellat asperiores molestias. Facere minima culpa distinctio natus eius voluptatibus odit est consectetur dolor labore rerum, tenetur ducimus voluptas ab sed non. Quae alias possimus, earum omnis error cupiditate quam dolores? Ducimus quis id, asperiores excepturi fugit magni velit neque fuga maiores sit dolore quo labore magnam odio nostrum consequatur alias maxime animi autem ad omnis! Eveniet error aliquam soluta omnis deleniti architecto alias eum corrupti. Veniam mollitia, facere quo cumque animi commodi et consequuntur, laudantium ipsam laborum aspernatur, pariatur facilis atque cupiditate id! Rem iste esse, recusandae magnam vel et natus labore iure veritatis explicabo. Reprehenderit eum vel cupiditate. Veniam sit, doloribus autem ab, dolor esse atque aut minus quasi laborum facere distinctio optio soluta corrupti ex earum voluptatum voluptatibus eligendi iure repellat velit eius cum. Excepturi ad laboriosam itaque maxime! Omnis quos dicta excepturi sed assumenda eaque aliquid esse quisquam! Harum nihil praesentium totam illum voluptatum sint, autem ullam cupiditate repellat commodi a. Illum ea eaque temporibus quas, iusto provident optio quaerat deleniti voluptas nemo debitis accusantium, expedita eveniet fugiat omnis inventore quod? Necessitatibus quisquam exercitationem, veritatis veniam neque tempore perspiciatis. Praesentium quaerat labore aliquid expedita, assumenda inventore illum in nobis beatae eveniet cupiditate nostrum ea ab voluptatibus at voluptates asperiores ipsa accusantium iusto laudantium ex quibusdam laboriosam. Et doloremque quia veniam perferendis animi minus sunt a, velit dolorum porro rem inventore illo sint alias provident. Harum quidem corporis explicabo, officiis tempore, facilis nobis impedit accusamus ipsum deleniti dicta quasi enim saepe! Iusto dolor recusandae nisi, deserunt corrupti quas doloribus, nam reprehenderit vitae eius eos ad expedita suscipit molestias dolorem ab? Accusantium ducimus quod quia, nisi vel veritatis dolores? Sunt, libero laboriosam! Ratione animi sit, quibusdam temporibus voluptatem ducimus? Veniam, eum laboriosam? Quisquam quos quas nihil aperiam soluta cupiditate sapiente culpa incidunt rem eum voluptatibus, inventore, expedita aut animi reiciendis! Repellat, tempora, perferendis fugit voluptate qui, nam incidunt sint culpa sit aperiam obcaecati fugiat? Vero odio illum animi aspernatur nisi mollitia nostrum beatae necessitatibus voluptatibus voluptas, repellendus alias quod porro nemo incidunt est? Quisquam optio totam recusandae hic dignissimos quis possimus natus non quos iste dolores quam facere eius adipisci qui similique, quidem cum commodi accusantium, eum, aliquid porro ducimus minus. Voluptatibus hic quia in qui quidem eum praesentium, aut cumque quisquam, eius, incidunt ad iste! Illum eum natus dolor. Voluptas debitis eos totam id iusto fugiat quidem laborum natus, unde vero ex, eius, soluta sint quaerat cum mollitia voluptates repellat est quas? Recusandae architecto sapiente rerum qui, quaerat distinctio earum facilis fugit doloribus? Dignissimos, eaque facilis nihil excepturi sapiente magni cupiditate nemo. Quisquam similique vel eos, soluta nesciunt quia consequatur! Consequuntur, velit. Quibusdam sit perferendis, hic dolorem nesciunt, quidem iusto repudiandae voluptatum temporibus architecto laborum eveniet corporis tenetur quis harum animi ipsam fuga dignissimos impedit numquam quas!</p>
-    </div>
+      {editText ? (
+        <>
+          <textarea onChange={(e) => setText(e.target.value)} defaultValue={text} cols="60" rows="3"></textarea><br />
+          <button onClick={() => setEditText(false)}>Valider édition</button>
+        </>
+      ) : (
+        <>
+          <p>{text}</p>
+          <button onClick={() => setEditText(true)}>Editer texte</button>
+        </>
+      )}
+
+    </div >
   );
 };
 
